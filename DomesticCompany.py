@@ -1,28 +1,20 @@
 """
-From my investigations, one can find the following types of domestically regulated/registered companies :
-    - Institut de microfinance (Habilitation)
-    - Compagnie financière holding (Inscription liste)
-    - Entreprise mère de société de financement (Inscription liste)
-    - Société de financement (Agrément ACPR)
-    - Société de financement/Etablissement de paiement (Agrément ACPR)
-    - Etablissement de crédit - Banque - Prestataire de services d'investissement (Agrément ACPR)
-    - Etablissement de crédit - Banque mutualiste ou coopérative - Prestataire de services d'investissement (Agrément ACPR)
-    - Etablissement de crédit - Caisse de crédit municipal et établissement assimilable - Non prestataire de services d'investissement (Agrément ACPR)
-    - Etablissement de crédit - Banque - Non prestataire de services d'investissement (Agrément ACPR)
-    - Entreprise d'investissement (Agrément ACPR)
-    - Etablissement de crédit - Établissement de crédit spécialisé - Prestataire de services d'investissement (Agrément ACPR)
-    - Etablissement de crédit - Établissement de crédit spécialisé - Non prestataire de services d'investissement (Agrément ACPR)
-    - Etablissement de crédit - Banque mutualiste ou coopérative - Non prestataire de services d'investissement (Agrément ACPR)
-    - Etablissement de paiement (Agrément ACPR)
-    - Société de tiers-financement (Autorisation)
-    - Etablissement de monnaie électronique (Agrément ACPR)
-    - Exempté - Etablissement de paiement (-)
-    - Société de financement/Entreprise d'investissement (Agrément ACPR)
-    - Société de financement/Compagnie financière holding (Agrément ACPR)
-    - Etablissement de paiement à régime dérogatoire (Agrément ACPR)
-    - Changeur manuel (-)
-Not all will be implemented (empty class defaulting to empty methods of parents)
-It
+Copyright © 2017 Nicolas Garnier (nicolas@github.equinoxe.ovh).
+This file is part of RegaFinder, a personal tool designed to perform
+reverse searches in the French financial firms register REGAFI.
+
+RegaFinder is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RegaFinder is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with RegaFinder. If not, see <http://www.gnu.org/licenses/>
 """
 
 
@@ -37,6 +29,31 @@ N_INVESTMENT_SERVICES = 45                        # Should get 5 instruments x 9
 
 
 class DomesticCompany(Company):
+    """
+    From my investigations, one can find the following types of domestically regulated/registered companies :
+        - Institut de microfinance (Habilitation)
+        - Compagnie financière holding (Inscription liste)
+        - Entreprise mère de société de financement (Inscription liste)
+        - Société de financement (Agrément ACPR)
+        - Société de financement/Etablissement de paiement (Agrément ACPR)
+        - Etablissement de crédit - Banque - Prestataire de services d'investissement (Agrément ACPR)
+        - Etablissement de crédit - Banque mutualiste ou coopérative - Prestataire de services d'investissement (Agrément ACPR)
+        - Etablissement de crédit - Caisse de crédit municipal et établissement assimilable - Non prestataire de services d'investissement (Agrément ACPR)
+        - Etablissement de crédit - Banque - Non prestataire de services d'investissement (Agrément ACPR)
+        - Entreprise d'investissement (Agrément ACPR)
+        - Etablissement de crédit - Établissement de crédit spécialisé - Prestataire de services d'investissement (Agrément ACPR)
+        - Etablissement de crédit - Établissement de crédit spécialisé - Non prestataire de services d'investissement (Agrément ACPR)
+        - Etablissement de crédit - Banque mutualiste ou coopérative - Non prestataire de services d'investissement (Agrément ACPR)
+        - Etablissement de paiement (Agrément ACPR)
+        - Société de tiers-financement (Autorisation)
+        - Etablissement de monnaie électronique (Agrément ACPR)
+        - Exempté - Etablissement de paiement (-)
+        - Société de financement/Entreprise d'investissement (Agrément ACPR)
+        - Société de financement/Compagnie financière holding (Agrément ACPR)
+        - Etablissement de paiement à régime dérogatoire (Agrément ACPR)
+        - Changeur manuel (-)
+    Not all will be implemented for my needs.
+    """
     ACPR_activities = {v: k for k, v in Legend.getACPRActivities().items()}  # need reverse legend here
 
     def _retrieveInvestmentServices(self, frenchActivitiesDiv, cib):

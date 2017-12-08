@@ -1,9 +1,20 @@
 """
-From my investigations, one can find the following types of passeporting companies :
-    - Etablissement de crédit
-    - Entreprise d'investissement
-    - Etablissement financier
-Not all will be implemented (empty class defaulting to empty methods of parents)
+Copyright © 2017 Nicolas Garnier (nicolas@github.equinoxe.ovh).
+This file is part of RegaFinder, a personal tool designed to perform
+reverse searches in the French financial firms register REGAFI.
+
+RegaFinder is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RegaFinder is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with RegaFinder. If not, see <http://www.gnu.org/licenses/>
 """
 
 
@@ -17,6 +28,13 @@ N_INVESTMENT_SERVICES = 150                        # Should get 10 instruments x
 
 
 class PasseportingCompany(Company):
+    """
+    From my investigations, one can find the following types of passeporting companies :
+        - Etablissement de crédit
+        - Entreprise d'investissement
+        - Etablissement financier
+    Not all will be implemented for my needs.
+    """
     def _retrieveInvestmentServices(self, frenchActivitiesDiv, cib):
         try:
             services = self._findInvestmentServices(frenchActivitiesDiv, N_INVESTMENT_SERVICES)
