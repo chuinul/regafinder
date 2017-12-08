@@ -1,3 +1,15 @@
+# RegaFinder
+RawResults/
+Samples/
+regafi_export.csv
+rega.log
+screened.txt
+
+# PyCharm
+.idea/
+
+### GitHub generic ###
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
